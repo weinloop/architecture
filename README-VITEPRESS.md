@@ -84,9 +84,12 @@ BASE_PATH=/<仓库名>/ npm run docs:build
 
 ## 目录结构
 
-- `index.md`：站点首页
-- `1.开发方法.md` ~ `10.数据与集成.md`：正文文档（未移动原文件）
-- `.vitepress/config.js`：站点与主题配置
+- `index.md`：站点首页（案例 / 论文 / 选择 入口）
+- `案例/`：案例题考点速记（15 章），含 `index.md` 总览
+- `论文/`：系统架构与软件工程专题（10 章），含 `index.md` 总览
+- `选择/`：选择题考点速记（14 章），含 `index.md` 总览
+- `*-raw.md`：原始素材，不参与构建（已通过 srcExclude 排除）
+- `.vitepress/config.js`：站点与侧栏、导航配置
 - `public/logo.svg`：站点头部 Logo
 
 ## 修改内容

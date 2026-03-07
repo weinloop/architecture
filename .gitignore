@@ -1,3 +1,9 @@
 node_modules
 dist
 .vitepress/cache
+案例/_docx_extract
+案例/*.docx
+选择/media
+选择/*.docx
+选择/*-raw.md
+选择/extract_docx.py
