@@ -50,6 +50,7 @@ export default defineConfig({
   markdown: {
     lineNumbers: false,
   },
+  ignoreDeadLinks: true,
   vite: {
     // 兼容 Web 与 App 内浏览器
     build: {

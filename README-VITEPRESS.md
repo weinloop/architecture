@@ -12,7 +12,7 @@ npm install
 npm run docs:dev
 ```
 
-浏览器访问 **http://localhost:5173**。
+浏览器访问 <code>http://localhost:5173</code>。
 
 ## 构建与预览
 
