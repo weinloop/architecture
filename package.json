@@ -1,0 +1,15 @@
+{
+  "name": "lunwen-sucai-docs",
+  "version": "1.0.0",
+  "description": "论文素材 VitePress 站点",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "@shikijs/themes": "^2.5.0",
+    "vitepress": "^1.6.0"
+  }
+}
