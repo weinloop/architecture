@@ -60,10 +60,17 @@ const planSidebar = [
   { text: '每日计划-带关联', link: '/plan/每日计划-带关联' },
 ]
 
+// 论文背诵版
+const paperReciteSidebar = [
+  { text: '论文背诵版', link: '/论文背诵版/' },
+  { text: '云原生可观测性设计与实践', link: '/论文背诵版/云原生可观测性设计与实践-航空运营智能管理平台-论文' },
+]
+
 const sidebar = [
   { text: '首页', link: '/' },
   { text: '案例', collapsed: false, items: caseSidebar },
   { text: '论文', collapsed: false, items: paperSidebar },
+  { text: '论文背诵版', collapsed: false, items: paperReciteSidebar },
   { text: '选择', collapsed: false, items: choiceSidebar },
   { text: '计划', collapsed: false, items: planSidebar },
 ]
@@ -91,6 +98,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '案例', link: '/案例/' },
       { text: '论文', link: '/论文/' },
+      { text: '论文背诵版', link: '/论文背诵版/' },
       { text: '选择', link: '/选择/' },
       { text: '计划', link: '/plan/30天冲刺内容' },
     ],

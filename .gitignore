@@ -7,3 +7,6 @@ dist
 选择/*.docx
 选择/*-raw.md
 选择/extract_docx.py
+论文背诵版/*.docx
+论文背诵版/*.txt
+论文背诵版/*.png
