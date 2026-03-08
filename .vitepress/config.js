@@ -54,11 +54,18 @@ const choiceSidebar = [
   { text: '14 法律法规', link: '/选择/14-法律法规-考点速记' },
 ]
 
+// 计划
+const planSidebar = [
+  { text: '30天冲刺内容', link: '/plan/30天冲刺内容' },
+  { text: '每日计划-带关联', link: '/plan/每日计划-带关联' },
+]
+
 const sidebar = [
   { text: '首页', link: '/' },
   { text: '案例', collapsed: false, items: caseSidebar },
   { text: '论文', collapsed: false, items: paperSidebar },
   { text: '选择', collapsed: false, items: choiceSidebar },
+  { text: '计划', collapsed: false, items: planSidebar },
 ]
 
 // 部署到 GitHub Pages 项目站时为 /仓库名/，本地或自定义域名时为 /
@@ -85,6 +92,7 @@ export default defineConfig({
       { text: '案例', link: '/案例/' },
       { text: '论文', link: '/论文/' },
       { text: '选择', link: '/选择/' },
+      { text: '计划', link: '/plan/30天冲刺内容' },
     ],
     sidebar,
     outline: [2, 4],
