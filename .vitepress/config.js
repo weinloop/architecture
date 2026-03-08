@@ -63,7 +63,7 @@ const planSidebar = [
 // 论文背诵版
 const paperReciteSidebar = [
   { text: '论文背诵版', link: '/论文背诵版/' },
-  { text: '云原生可观测性设计与实践', link: '/论文背诵版/云原生可观测性设计与实践-航空运营智能管理平台-论文' },
+  { text: '云原生 · 可观测性设计与实践', link: '/论文背诵版/云原生/2.云原生可观测性设计与实践-航空运营智能管理平台-论文' },
 ]
 
 const sidebar = [
