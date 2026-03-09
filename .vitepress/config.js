@@ -58,6 +58,7 @@ const choiceSidebar = [
 const planSidebar = [
   { text: '30天冲刺内容', link: '/plan/30天冲刺内容' },
   { text: '每日计划-带关联', link: '/plan/每日计划-带关联' },
+  { text: '英语 · 技术英语入门-计算机常用词汇', link: '/plan/英语/技术英语入门-计算机常用词汇' },
 ]
 
 // 论文背诵版
