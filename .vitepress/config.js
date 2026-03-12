@@ -69,11 +69,20 @@ const paperReciteSidebar = [
   { text: '云原生 · 可观测性设计与实践', link: '/论文背诵版/云原生/2.云原生可观测性设计与实践-航空运营智能管理平台-论文' },
 ]
 
+// 可观测 · 产品需求与设计（位于论文背诵版/云原生/可观测）
+const observabilitySidebar = [
+  { text: '可观测总览', link: '/论文背诵版/云原生/可观测/' },
+  { text: '产品需求设计文档 - 航空运营智能管理平台可观测性', link: '/论文背诵版/云原生/可观测/产品需求设计文档-航空运营智能管理平台可观测性' },
+  { text: '架构技术设计方案 - 航空运营智能管理平台可观测性', link: '/论文背诵版/云原生/可观测/架构技术设计方案-航空运营智能管理平台可观测性' },
+  { text: '案例 - 问题、方案与成效', link: '/论文背诵版/云原生/可观测/案例-问题方案与成效-航空运营智能管理平台可观测性' },
+]
+
 const sidebar = [
   { text: '首页', link: '/' },
   { text: '案例', collapsed: false, items: caseSidebar },
   { text: '论文', collapsed: false, items: paperSidebar },
   { text: '论文背诵版', collapsed: false, items: paperReciteSidebar },
+  { text: '可观测', collapsed: false, items: observabilitySidebar },
   { text: '选择', collapsed: false, items: choiceSidebar },
   { text: '计划', collapsed: false, items: planSidebar },
 ]
@@ -102,6 +111,7 @@ export default defineConfig({
       { text: '案例', link: '/案例/' },
       { text: '论文', link: '/论文/' },
       { text: '论文背诵版', link: '/论文背诵版/' },
+      { text: '可观测', link: '/论文背诵版/云原生/可观测/' },
       { text: '选择', link: '/选择/' },
       { text: '计划', link: '/plan/30天冲刺内容' },
     ],
