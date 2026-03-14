@@ -64,7 +64,7 @@ const planSidebar = [
   { text: '英语 · 跟读-技术介绍-云原生可观测性', link: '/plan/英语/跟读-技术介绍-云原生可观测性' },
 ]
 
-// 论文背诵版 · 云原生（10 篇论文成稿，含 Mermaid 架构图）
+// 论文背诵版 · 云原生（10 篇）
 const cloudNativeSidebar = [
   { text: '云原生总览', link: '/论文背诵版/云原生/' },
   { text: '1. 云原生架构', link: '/论文背诵版/云原生/1.云原生架构' },
@@ -79,17 +79,42 @@ const cloudNativeSidebar = [
   { text: '10. 论可靠性设计', link: '/论文背诵版/云原生/10.云原生-论可靠性设计-论文成稿' },
 ]
 
-const paperReciteSidebar = [
-  { text: '论文背诵版', link: '/论文背诵版/' },
-  { text: '云原生（10 篇）', collapsed: false, items: cloudNativeSidebar },
+// 论文背诵版 · 微服务（2 篇）
+const microserviceSidebar = [
+  { text: '1. 论微服务治理技术', link: '/论文背诵版/微服务/1.微服务-论微服务治理技术-论文成稿' },
+  { text: '2. 论微服务设计约束的应用', link: '/论文背诵版/微服务/2.微服务-论微服务设计约束的应用-论文成稿' },
 ]
 
-// 可观测 · 产品需求与设计（位于论文背诵版/云原生/可观测）
-const observabilitySidebar = [
-  { text: '可观测总览', link: '/论文背诵版/云原生/可观测/' },
-  { text: '产品需求设计文档 - 航空运营智能管理平台可观测性', link: '/论文背诵版/云原生/可观测/产品需求设计文档-航空运营智能管理平台可观测性' },
-  { text: '架构技术设计方案 - 航空运营智能管理平台可观测性', link: '/论文背诵版/云原生/可观测/架构技术设计方案-航空运营智能管理平台可观测性' },
-  { text: '案例 - 问题、方案与成效', link: '/论文背诵版/云原生/可观测/案例-问题方案与成效-航空运营智能管理平台可观测性' },
+// 论文背诵版 · 大数据（2 篇）
+const bigDataSidebar = [
+  { text: '1. Lambda 架构的应用', link: '/论文背诵版/大数据/1.大数据-Lambda架构的应用-论文成稿' },
+  { text: '2. 论 Kappa 架构的应用', link: '/论文背诵版/大数据/2.大数据-论Kappa架构的应用-论文成稿' },
+]
+
+// 论文背诵版 · 测试（7 篇）
+const testSidebar = [
+  { text: '1. 静态测试', link: '/论文背诵版/测试/1.测试-静态测试-论文成稿' },
+  { text: '2. 静态和动态测试', link: '/论文背诵版/测试/2.测试-静态和动态测试-论文成稿' },
+  { text: '3. 单元测试', link: '/论文背诵版/测试/3.测试-单元测试-论文成稿' },
+  { text: '4. 性能测试', link: '/论文背诵版/测试/4.测试-性能测试-论文成稿' },
+  { text: '5. 自动化融合测试', link: '/论文背诵版/测试/5.测试-自动化融合测试-论文成稿' },
+  { text: '6. AI 辅助 TDD', link: '/论文背诵版/测试/6.测试-AI辅助TDD-论文成稿' },
+  { text: '7. 混沌工程', link: '/论文背诵版/测试/7.测试-混沌工程-论文成稿' },
+]
+
+// 论文背诵版 · 安全（2 篇）
+const securitySidebar = [
+  { text: '1. 论安全架构设计', link: '/论文背诵版/安全/1.安全-论安全架构设计-论文成稿' },
+  { text: '2. 论安全架构应用', link: '/论文背诵版/安全/2.安全-论安全架构应用-论文成稿' },
+]
+
+const paperReciteSidebar = [
+  { text: '论文背诵版总览', link: '/论文背诵版/' },
+  { text: '云原生（10 篇）', collapsed: false, items: cloudNativeSidebar },
+  { text: '微服务（2 篇）', collapsed: false, items: microserviceSidebar },
+  { text: '大数据（2 篇）', collapsed: false, items: bigDataSidebar },
+  { text: '测试（7 篇）', collapsed: false, items: testSidebar },
+  { text: '安全（2 篇）', collapsed: false, items: securitySidebar },
 ]
 
 const sidebar = [
@@ -114,7 +139,7 @@ export default withMermaid(defineConfig({
   lang: 'zh-CN',
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes' }],
-    ['meta', { name: 'theme-color', content: '#2d7ff9' }],
+    ['meta', { name: 'theme-color', content: '#67b3e8' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
     ['link', { rel: 'stylesheet', href: '/custom.css' }],
@@ -126,7 +151,6 @@ export default withMermaid(defineConfig({
       { text: '案例', link: '/案例/' },
       { text: '论文', link: '/论文/' },
       { text: '论文背诵版', link: '/论文背诵版/' },
-      { text: '云原生', link: '/论文背诵版/云原生/' },
       { text: '选择', link: '/选择/' },
       { text: '计划', link: '/plan/30天冲刺内容' },
     ],
@@ -151,16 +175,23 @@ export default withMermaid(defineConfig({
       cssTarget: 'chrome61',
     },
   },
-  // Mermaid 图表：站点内 ```mermaid 代码块可正常渲染，随主题切换亮/暗色
+  // Mermaid 图表：淡蓝配色，随主题切换亮/暗色
   mermaid: {
     theme: 'base',
     themeVariables: {
-      primaryColor: '#2d7ff9',
-      primaryTextColor: '#1a1a1a',
-      primaryBorderColor: '#2d7ff9',
-      lineColor: '#4a4a4a',
-      secondaryColor: '#e8f0fe',
-      tertiaryColor: '#f0f4f8',
+      primaryColor: '#93c5fd',
+      primaryTextColor: '#1e3a5f',
+      primaryBorderColor: '#67b3e8',
+      lineColor: '#64748b',
+      secondaryColor: '#bae6fd',
+      tertiaryColor: '#e0f2fe',
+      background: '#f8fafc',
+      mainBkg: '#e0f2fe',
+      secondBkg: '#f0f9ff',
+      border1: '#7dd3fc',
+      border2: '#38bdf8',
+      arrowheadColor: '#67b3e8',
+      fontFamily: 'inherit',
     },
   },
   mermaidPlugin: {
