@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 // 案例 · 考点速记（15 篇）
 const caseSidebar = [
@@ -63,10 +64,24 @@ const planSidebar = [
   { text: '英语 · 跟读-技术介绍-云原生可观测性', link: '/plan/英语/跟读-技术介绍-云原生可观测性' },
 ]
 
-// 论文背诵版
+// 论文背诵版 · 云原生（10 篇论文成稿，含 Mermaid 架构图）
+const cloudNativeSidebar = [
+  { text: '云原生总览', link: '/论文背诵版/云原生/' },
+  { text: '1. 云原生架构', link: '/论文背诵版/云原生/1.云原生架构' },
+  { text: '2. 云原生可观测性设计与实践', link: '/论文背诵版/云原生/2.云原生可观测性设计与实践-航空运营智能管理平台-论文' },
+  { text: '3. 云原生层次架构', link: '/论文背诵版/云原生/3.云原生-层次架构-成稿' },
+  { text: '4. 云原生云计算运维', link: '/论文背诵版/云原生/4.云原生-云计算运维-论文成稿' },
+  { text: '5. 云原生事件驱动架构应用', link: '/论文背诵版/云原生/5.云原生-事件驱动架构应用-论文成稿' },
+  { text: '6. 云原生 Serverless 架构', link: '/论文背诵版/云原生/6.云原生-Serverless架构-论文成稿' },
+  { text: '7. 云原生服务网格', link: '/论文背诵版/云原生/7.云原生-服务网格-论文成稿' },
+  { text: '8. 论存储计算分离模式的应用', link: '/论文背诵版/云原生/8.云原生-论存储计算分离模式的应用-论文成稿' },
+  { text: '9. 论分布式事务及其解决方案', link: '/论文背诵版/云原生/9.云原生-论分布式事务及其解决方案-论文成稿' },
+  { text: '10. 论可靠性设计', link: '/论文背诵版/云原生/10.云原生-论可靠性设计-论文成稿' },
+]
+
 const paperReciteSidebar = [
   { text: '论文背诵版', link: '/论文背诵版/' },
-  { text: '云原生 · 可观测性设计与实践', link: '/论文背诵版/云原生/2.云原生可观测性设计与实践-航空运营智能管理平台-论文' },
+  { text: '云原生（10 篇）', collapsed: false, items: cloudNativeSidebar },
 ]
 
 // 可观测 · 产品需求与设计（位于论文背诵版/云原生/可观测）
@@ -82,7 +97,6 @@ const sidebar = [
   { text: '案例', collapsed: false, items: caseSidebar },
   { text: '论文', collapsed: false, items: paperSidebar },
   { text: '论文背诵版', collapsed: false, items: paperReciteSidebar },
-  { text: '可观测', collapsed: false, items: observabilitySidebar },
   { text: '选择', collapsed: false, items: choiceSidebar },
   { text: '计划', collapsed: false, items: planSidebar },
 ]
@@ -90,7 +104,7 @@ const sidebar = [
 // 部署到 GitHub Pages 项目站时为 /仓库名/，本地或自定义域名时为 /
 const base = process.env.BASE_PATH || '/'
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   srcDir: '.',
   srcExclude: ['**/*-raw.md', '**/_docx_extract/**', '**/extract_docx.py', '**/node_modules/**'],
   outDir: 'dist',
@@ -103,6 +117,7 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#2d7ff9' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
+    ['link', { rel: 'stylesheet', href: '/custom.css' }],
   ],
   themeConfig: {
     logo: '/logo.svg',
@@ -111,7 +126,7 @@ export default defineConfig({
       { text: '案例', link: '/案例/' },
       { text: '论文', link: '/论文/' },
       { text: '论文背诵版', link: '/论文背诵版/' },
-      { text: '可观测', link: '/论文背诵版/云原生/可观测/' },
+      { text: '云原生', link: '/论文背诵版/云原生/' },
       { text: '选择', link: '/选择/' },
       { text: '计划', link: '/plan/30天冲刺内容' },
     ],
@@ -136,4 +151,19 @@ export default defineConfig({
       cssTarget: 'chrome61',
     },
   },
-})
+  // Mermaid 图表：站点内 ```mermaid 代码块可正常渲染，随主题切换亮/暗色
+  mermaid: {
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#2d7ff9',
+      primaryTextColor: '#1a1a1a',
+      primaryBorderColor: '#2d7ff9',
+      lineColor: '#4a4a4a',
+      secondaryColor: '#e8f0fe',
+      tertiaryColor: '#f0f4f8',
+    },
+  },
+  mermaidPlugin: {
+    class: 'mermaid-wrap',
+  },
+}))

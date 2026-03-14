@@ -1,0 +1,9 @@
+/* Mermaid 图表：小屏横向滚动、避免溢出 */
+.mermaid-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 1rem 0;
+}
+.mermaid-wrap svg {
+  max-width: none;
+}

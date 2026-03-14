@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "@shikijs/themes": "^2.5.0",
-    "vitepress": "^1.6.0"
+    "mermaid": "^11.4.0",
+    "vitepress": "^1.6.0",
+    "vitepress-plugin-mermaid": "^2.0.17"
   }
 }
