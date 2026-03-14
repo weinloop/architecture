@@ -64,7 +64,7 @@ const planSidebar = [
   { text: '英语 · 跟读-技术介绍-云原生可观测性', link: '/plan/英语/跟读-技术介绍-云原生可观测性' },
 ]
 
-// 论文背诵版 · 云原生（10 篇）
+// 论文背诵版 · 云原生（14 篇）
 const cloudNativeSidebar = [
   { text: '云原生总览', link: '/论文背诵版/云原生/' },
   { text: '1. 云原生架构', link: '/论文背诵版/云原生/1.云原生架构' },
@@ -77,6 +77,10 @@ const cloudNativeSidebar = [
   { text: '8. 论存储计算分离模式的应用', link: '/论文背诵版/云原生/8.云原生-论存储计算分离模式的应用-论文成稿' },
   { text: '9. 论分布式事务及其解决方案', link: '/论文背诵版/云原生/9.云原生-论分布式事务及其解决方案-论文成稿' },
   { text: '10. 论可靠性设计', link: '/论文背诵版/云原生/10.云原生-论可靠性设计-论文成稿' },
+  { text: '11. 缓存技术应用', link: '/论文背诵版/云原生/11.云原生-缓存技术应用-论文成稿' },
+  { text: '12. 消息中间件技术应用', link: '/论文背诵版/云原生/12.云原生-消息中间件技术应用-论文成稿' },
+  { text: '13. 自动化运维应用', link: '/论文背诵版/云原生/13.云原生-自动化运维应用-论文成稿' },
+  { text: '14. 容器化技术应用', link: '/论文背诵版/云原生/14.云原生-容器化技术应用-论文成稿' },
 ]
 
 // 论文背诵版 · 微服务（2 篇）
@@ -110,7 +114,7 @@ const securitySidebar = [
 
 const paperReciteSidebar = [
   { text: '论文背诵版总览', link: '/论文背诵版/' },
-  { text: '云原生（10 篇）', collapsed: false, items: cloudNativeSidebar },
+  { text: '云原生（14 篇）', collapsed: false, items: cloudNativeSidebar },
   { text: '微服务（2 篇）', collapsed: false, items: microserviceSidebar },
   { text: '大数据（2 篇）', collapsed: false, items: bigDataSidebar },
   { text: '测试（7 篇）', collapsed: false, items: testSidebar },
