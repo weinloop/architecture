@@ -118,6 +118,7 @@ const securitySidebar = [
 
 const paperReciteSidebar = [
   { text: '论文背诵版总览', link: '/论文背诵版/' },
+  { text: '论文成稿通用模板', link: '/论文背诵版/论文成稿-通用模板' },
   { text: '云原生（18 篇）', collapsed: false, items: cloudNativeSidebar },
   { text: '微服务（2 篇）', collapsed: false, items: microserviceSidebar },
   { text: '大数据（2 篇）', collapsed: false, items: bigDataSidebar },
