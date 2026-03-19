@@ -160,6 +160,7 @@ export default withMermaid(defineConfig({
       { text: '案例', link: '/案例/' },
       { text: '论文', link: '/论文/' },
       { text: '论文背诵版', link: '/论文背诵版/' },
+      { text: '论文精读版', link: '/pro/云原生/1.云原生架构设计' },
       { text: '选择', link: '/选择/' },
       { text: '计划', link: '/plan/30天冲刺内容' },
     ],
