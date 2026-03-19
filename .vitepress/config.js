@@ -126,11 +126,55 @@ const paperReciteSidebar = [
   { text: '安全（2 篇）', collapsed: false, items: securitySidebar },
 ]
 
+// 论文精读版 (Pro)
+const proCloudNativeSidebar = [
+  { text: '云原生精读总览', link: '/pro/云原生/' },
+  { text: '1. 云原生架构设计', link: '/pro/云原生/1.云原生架构设计' },
+  { text: '2. 高可用性与软件可靠性设计', link: '/pro/云原生/2.高可用性与软件可靠性设计' },
+  { text: '3. 缓存技术应用', link: '/pro/云原生/3.缓存技术应用' },
+  { text: '4. 消息中间件技术应用', link: '/pro/云原生/4.消息中间件技术应用' },
+  { text: '5. 数据库与存储设计', link: '/pro/云原生/5.数据库与存储设计' },
+  { text: '6. AI大模型与智能化应用', link: '/pro/云原生/6.AI大模型与智能化应用' },
+  { text: '7. 云原生安全与服务网格', link: '/pro/云原生/7.云原生安全与服务网格' },
+  { text: '8. 云原生运维与可观测性', link: '/pro/云原生/8.云原生运维与可观测性' },
+  { text: '云原生论文主题与案例匹配索引', link: '/pro/云原生/云原生论文主题与案例匹配索引' },
+]
+
+const proBigDataSidebar = [
+  { text: '大数据精读总览', link: '/pro/大数据/' },
+  { text: '论大数据架构在航空运营决策支持系统中的应用', link: '/pro/大数据/论大数据架构在航空运营决策支持系统中的应用' },
+]
+
+const proSecuritySidebar = [
+  { text: '安全精读总览', link: '/pro/安全/' },
+  { text: '论信息系统安全架构设计与实践', link: '/pro/安全/论信息系统安全架构设计与实践' },
+]
+
+const proMicroserviceSidebar = [
+  { text: '微服务精读总览', link: '/pro/微服务/' },
+  { text: '论微服务架构在分布式航空运营平台中的设计与治理', link: '/pro/微服务/论微服务架构在分布式航空运营平台中的设计与治理' },
+]
+
+const proTestSidebar = [
+  { text: '测试精读总览', link: '/pro/测试/' },
+  { text: '论软件测试在分布式系统质量保障中的应用', link: '/pro/测试/论软件测试在分布式系统质量保障中的应用' },
+]
+
+const proSidebar = [
+  { text: '精读版总览', link: '/pro/' },
+  { text: '云原生', collapsed: false, items: proCloudNativeSidebar },
+  { text: '大数据', collapsed: false, items: proBigDataSidebar },
+  { text: '安全', collapsed: false, items: proSecuritySidebar },
+  { text: '微服务', collapsed: false, items: proMicroserviceSidebar },
+  { text: '测试', collapsed: false, items: proTestSidebar },
+]
+
 const sidebar = [
   { text: '首页', link: '/' },
   { text: '案例', collapsed: false, items: caseSidebar },
   { text: '论文', collapsed: false, items: paperSidebar },
   { text: '论文背诵版', collapsed: false, items: paperReciteSidebar },
+  { text: '论文精读版', collapsed: false, items: proSidebar },
   { text: '选择', collapsed: false, items: choiceSidebar },
   { text: '计划', collapsed: false, items: planSidebar },
 ]
@@ -160,7 +204,7 @@ export default withMermaid(defineConfig({
       { text: '案例', link: '/案例/' },
       { text: '论文', link: '/论文/' },
       { text: '论文背诵版', link: '/论文背诵版/' },
-      { text: '论文精读版', link: '/pro/云原生/1.云原生架构设计' },
+      { text: '论文精读版', link: '/pro/' },
       { text: '选择', link: '/选择/' },
       { text: '计划', link: '/plan/30天冲刺内容' },
     ],
