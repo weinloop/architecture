@@ -118,6 +118,7 @@ const securitySidebar = [
 
 const paperReciteSidebar = [
   { text: '论文背诵版总览', link: '/论文背诵版/' },
+  { text: '🔥 核心背诵简版 (考前冲刺)', link: '/论文背诵版/背诵简版/全主题论文核心背诵简版' },
   { text: '论文成稿通用模板', link: '/论文背诵版/论文成稿-通用模板' },
   { text: '云原生（18 篇）', collapsed: false, items: cloudNativeSidebar },
   { text: '微服务（2 篇）', collapsed: false, items: microserviceSidebar },
@@ -203,7 +204,11 @@ export default withMermaid(defineConfig({
       { text: '首页', link: '/' },
       { text: '案例', link: '/案例/' },
       { text: '论文', link: '/论文/' },
-      { text: '论文背诵版', link: '/论文背诵版/' },
+      { text: '论文背诵版', items: [
+        { text: '背诵版总览', link: '/论文背诵版/' },
+        { text: '🔥 核心背诵简版', link: '/论文背诵版/背诵简版/全主题论文核心背诵简版' },
+        { text: '通用论文模板', link: '/论文背诵版/论文成稿-通用模板' },
+      ]},
       { text: '论文精读版', link: '/pro/' },
       { text: '选择', link: '/选择/' },
       { text: '计划', link: '/plan/30天冲刺内容' },
