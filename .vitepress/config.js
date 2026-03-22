@@ -21,19 +21,60 @@ const caseSidebar = [
   { text: '15 大模型应用', link: '/案例/15-大模型应用-考点速记' },
 ]
 
-// 论文 · 系统架构与软件工程（10 章 + 首页）
+// 论文 · 系统架构与软件工程（最新航空基线版）
 const paperSidebar = [
   { text: '论文总览', link: '/论文/' },
-  { text: '1. 开发方法', link: '/论文/1.开发方法' },
-  { text: '2. 架构设计', link: '/论文/2.架构设计' },
-  { text: '3. 分布式与高并发', link: '/论文/3.分布式与高并发' },
-  { text: '4. 面向服务架构', link: '/论文/4.面向服务架构' },
-  { text: '5. 云原生架构', link: '/论文/5.云原生架构' },
-  { text: '6. 软件测试与质量保证', link: '/论文/6.软件测试与质量保证' },
-  { text: '7. 需求工程', link: '/论文/7.需求工程' },
-  { text: '8. 系统设计', link: '/论文/8.系统设计' },
-  { text: '9. 系统运维', link: '/论文/9.系统运维' },
-  { text: '10. 数据与集成', link: '/论文/10.数据与集成' },
+  {
+    text: '云原生架构 (8 篇)',
+    collapsed: false,
+    items: [
+      { text: '架构设计实践', link: '/论文/云原生/19.云原生-航空运营智能管理平台架构设计实践' },
+      { text: '可靠性设计实践', link: '/论文/云原生/20.云原生-航空运营智能管理平台可靠性设计实践' },
+      { text: '可观测性设计实践', link: '/论文/云原生/21.云原生-航空运营智能管理平台可观测性设计实践' },
+      { text: '事件驱动架构应用', link: '/论文/云原生/22.云原生-航空运营智能管理平台事件驱动架构应用实践' },
+      { text: 'Serverless 架构应用', link: '/论文/云原生/23.云原生-航空运营智能管理平台Serverless架构应用实践' },
+      { text: '服务网格技术应用', link: '/论文/云原生/24.云原生-航空运营智能管理平台服务网格技术应用实践' },
+      { text: '存储计算分离应用', link: '/论文/云原生/25.云原生-航空运营智能管理平台存储计算分离应用实践' },
+      { text: '分布式事务应用实践', link: '/论文/云原生/26.云原生-航空运营智能管理平台分布式事务应用实践' },
+    ]
+  },
+  {
+    text: '软件测试与质量保障 (7 篇)',
+    collapsed: false,
+    items: [
+      { text: '质量保证与测试综述', link: '/论文/测试/8.测试-航空运营智能管理平台质量保证与测试实践' },
+      { text: '静态测试实践', link: '/论文/测试/9.测试-航空运营智能管理平台静态测试实践' },
+      { text: '单元测试实践', link: '/论文/测试/10.测试-航空运营智能管理平台单元测试实践' },
+      { text: '性能测试实践', link: '/论文/测试/11.测试-航空运营智能管理平台性能测试实践' },
+      { text: '自动化测试实践', link: '/论文/测试/12.测试-航空运营智能管理平台自动化测试实践' },
+      { text: 'AI 辅助测试实践', link: '/论文/测试/13.测试-航空运营智能管理平台AI辅助测试实践' },
+      { text: '混沌工程实践', link: '/论文/测试/14.测试-航空运营智能管理平台混沌工程实践' },
+    ]
+  },
+  {
+    text: '大数据架构 (2 篇)',
+    collapsed: false,
+    items: [
+      { text: 'Lambda 架构应用实践', link: '/论文/大数据/3.大数据-航空运营智能管理平台Lambda架构应用实践' },
+      { text: 'Kappa 架构应用实践', link: '/论文/大数据/4.大数据-航空运营智能管理平台Kappa架构应用实践' },
+    ]
+  },
+  {
+    text: '微服务架构 (2 篇)',
+    collapsed: false,
+    items: [
+      { text: '微服务治理技术实践', link: '/论文/微服务/3.微服务-航空运营智能管理平台微服务治理技术实践' },
+      { text: '微服务设计约束实践', link: '/论文/微服务/4.微服务-航空运营智能管理平台微服务设计约束实践' },
+    ]
+  },
+  {
+    text: '安全架构 (2 篇)',
+    collapsed: false,
+    items: [
+      { text: '安全架构设计实践', link: '/论文/安全/2.安全-航空运营智能管理平台安全架构设计' },
+      { text: '安全架构应用实践', link: '/论文/安全/3.安全-航空运营智能管理平台安全架构应用实践' },
+    ]
+  },
 ]
 
 // 选择 · 考点速记（14 篇）
@@ -172,12 +213,10 @@ const proSidebar = [
 
 const sidebar = [
   { text: '首页', link: '/' },
-  { text: '案例', collapsed: false, items: caseSidebar },
-  { text: '论文', collapsed: false, items: paperSidebar },
-  { text: '论文背诵版', collapsed: false, items: paperReciteSidebar },
-  { text: '论文精读版', collapsed: false, items: proSidebar },
-  { text: '选择', collapsed: false, items: choiceSidebar },
-  { text: '计划', collapsed: false, items: planSidebar },
+  { text: '论文专题', collapsed: false, items: paperSidebar },
+  { text: '案例速记', collapsed: false, items: caseSidebar },
+  { text: '选择题库', collapsed: false, items: choiceSidebar },
+  { text: '复习计划', collapsed: false, items: planSidebar },
 ]
 
 // 部署到 GitHub Pages 项目站时为 /仓库名/，本地或自定义域名时为 /
@@ -188,8 +227,8 @@ export default withMermaid(defineConfig({
   srcExclude: ['**/*-raw.md', '**/_docx_extract/**', '**/extract_docx.py', '**/node_modules/**'],
   outDir: 'dist',
   base,
-  title: '论文素材',
-  description: '系统架构与软件工程：案例、论文、选择考点速记',
+  title: '航空运营架构论文集',
+  description: '系统架构设计师考试：航空运营智能管理平台 20 篇高质量论文',
   lang: 'zh-CN',
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes' }],
@@ -202,16 +241,10 @@ export default withMermaid(defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '案例', link: '/案例/' },
-      { text: '论文', link: '/论文/' },
-      { text: '论文背诵版', items: [
-        { text: '背诵版总览', link: '/论文背诵版/' },
-        { text: '🔥 核心背诵简版', link: '/论文背诵版/背诵简版/全主题论文核心背诵简版' },
-        { text: '通用论文模板', link: '/论文背诵版/论文成稿-通用模板' },
-      ]},
-      { text: '论文精读版', link: '/pro/' },
-      { text: '选择', link: '/选择/' },
-      { text: '计划', link: '/plan/30天冲刺内容' },
+      { text: '论文专题', link: '/论文/' },
+      { text: '案例速记', link: '/案例/' },
+      { text: '选择题库', link: '/选择/' },
+      { text: '复习计划', link: '/plan/30天冲刺内容' },
     ],
     sidebar,
     outline: [2, 4],
