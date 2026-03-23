@@ -23,7 +23,7 @@ const caseSidebar = [
 
 // 论文 · 系统架构与软件工程（最新航空基线版）
 const paperSidebar = [
-  { text: '论文总览', link: '/论文/' },
+  { text: '论文目录', link: '/论文/' },
   {
     text: '云原生架构专题',
     collapsed: false,
