@@ -214,6 +214,7 @@ const proSidebar = [
 
 const sidebar = [
   { text: '首页', link: '/' },
+  { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
   { text: '论文专题', collapsed: false, items: paperSidebar },
   { text: '案例速记', collapsed: false, items: caseSidebar },
   { text: '选择题库', collapsed: false, items: choiceSidebar },
@@ -242,12 +243,20 @@ export default withMermaid(defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '论文专题', link: '/论文/' },
+      { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
+      { text: '论文目录', link: '/论文/' },
       { text: '案例速记', link: '/案例/' },
       { text: '选择题库', link: '/选择/' },
       { text: '复习计划', link: '/plan/30天冲刺内容' },
     ],
-    sidebar,
+    sidebar: [
+      { text: '首页', link: '/' },
+      { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
+      { text: '论文目录', collapsed: false, items: paperSidebar },
+      { text: '案例速记', collapsed: false, items: caseSidebar },
+      { text: '选择题库', collapsed: false, items: choiceSidebar },
+      { text: '复习计划', collapsed: false, items: planSidebar },
+    ],
     outline: [2, 4],
     socialLinks: [],
     footer: {
