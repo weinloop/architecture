@@ -366,18 +366,18 @@ export default withMermaid(defineConfig({
   mermaid: {
     theme: 'base',
     themeVariables: {
-      primaryColor: '#93c5fd',
-      primaryTextColor: '#1e3a5f',
-      primaryBorderColor: '#67b3e8',
-      lineColor: '#64748b',
-      secondaryColor: '#bae6fd',
-      tertiaryColor: '#e0f2fe',
-      background: '#f8fafc',
-      mainBkg: '#e0f2fe',
-      secondBkg: '#f0f9ff',
-      border1: '#7dd3fc',
-      border2: '#38bdf8',
-      arrowheadColor: '#67b3e8',
+      primaryColor: '#ffffff',      // 节点背景色 (白色)
+      primaryTextColor: '#333333',   // 文本颜色 (深灰色)
+      primaryBorderColor: '#333333', // 边框颜色 (深灰色)
+      lineColor: '#333333',          // 连接线颜色 (深灰色)
+      secondaryColor: '#ffffff',    // 次要节点背景色 (白色)
+      tertiaryColor: '#ffffff',     // 三级节点背景色 (白色)
+      background: '#ffffff',        // 全局背景色 (白色)
+      mainBkg: '#ffffff',          // 主背景 (白色)
+      secondBkg: '#ffffff',        // 次要背景 (白色)
+      border1: '#333333',          // 边框1 (深灰色)
+      border2: '#333333',          // 边框2 (深灰色)
+      arrowheadColor: '#333333',    // 箭头颜色 (深灰色)
       fontFamily: 'inherit',
     },
   },
