@@ -1,6 +1,83 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
+// 知识 · 体系图谱（5 大阶段）
+const knowledgeSidebar = [
+  { text: '知识图谱总览', link: '/知识/' },
+  {
+    text: '01 底层基石',
+    collapsed: false,
+    items: [
+      {
+        text: '计算机基础',
+        collapsed: true,
+        items: [
+          { text: '并发编程', link: '/知识/01-底层基石/01-计算机基础/01-并发编程' },
+          { text: '网络协议', link: '/知识/01-底层基石/01-计算机基础/02-网络协议' },
+          { text: '安全与编译', link: '/知识/01-底层基石/01-计算机基础/03-安全与编译' },
+        ]
+      },
+      {
+        text: '语言深度',
+        collapsed: true,
+        items: [
+          { text: 'Java核心', link: '/知识/01-底层基石/02-语言深度/01-Java核心' },
+          { text: 'JVM原理', link: '/知识/01-底层基石/02-语言深度/02-JVM原理' },
+        ]
+      },
+      {
+        text: '算法与数据结构',
+        collapsed: true,
+        items: [
+          { text: '常用数据结构', link: '/知识/01-底层基石/03-算法与数据结构/01-常用数据结构' },
+          { text: '经典算法思想', link: '/知识/01-底层基石/03-算法与数据结构/02-经典算法思想' },
+        ]
+      },
+    ]
+  },
+  {
+    text: '02 核心中间件',
+    collapsed: false,
+    items: [
+      { text: '数据库 MySQL', link: '/知识/02-核心中间件/01-数据库 MySQL/' },
+      { text: '缓存 Redis', link: '/知识/02-核心中间件/02-缓存 Redis/' },
+      { text: '消息队列 Kafka', link: '/知识/02-核心中间件/03-消息队列 Kafka/' },
+      { text: '网关 Nginx', link: '/知识/02-核心中间件/04-网关 Nginx/' },
+    ]
+  },
+  {
+    text: '03 分布式与云原生',
+    collapsed: false,
+    items: [
+      { text: '分布式通用设计', link: '/知识/03-分布式与云原生/01-分布式通用设计/' },
+      { text: '服务治理', link: '/知识/03-分布式与云原生/02-服务治理/' },
+      { text: '高可用保障', link: '/知识/03-分布式与云原生/03-高可用保障/' },
+      { text: '云原生工程化', link: '/知识/03-分布式与云原生/04-云原生工程化/' },
+    ]
+  },
+  {
+    text: '04 工程化能力落地',
+    collapsed: false,
+    items: [
+      { text: '代码工程化', link: '/知识/04-工程化能力落地/01-代码工程化/' },
+      { text: '可观测性工程化', link: '/知识/04-工程化能力落地/02-可观测性工程化/' },
+      { text: '测试工程化', link: '/知识/04-工程化能力落地/03-测试工程化/' },
+    ]
+  },
+  {
+    text: '05 非技术与软实力',
+    collapsed: false,
+    items: [
+      { text: '项目管理', link: '/知识/05-非技术与软实力/01-项目管理/' },
+      { text: '架构设计思维', link: '/知识/05-非技术与软实力/02-架构设计思维/' },
+      { text: '团队协作', link: '/知识/05-非技术与软实力/03-团队协作/' },
+      { text: '业务理解能力', link: '/知识/05-非技术与软实力/04-业务理解能力/' },
+      { text: '技术影响力', link: '/知识/05-非技术与软实力/05-技术影响力/' },
+    ]
+  },
+  { text: '航空运营智能管理平台架构实践', link: '/知识/航空运营智能管理平台架构设计与实践' },
+]
+
 // 案例 · 考点速记（15 篇）
 const caseSidebar = [
   { text: '案例总览', link: '/案例/' },
@@ -243,20 +320,28 @@ export default withMermaid(defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
-      { text: '论文目录', link: '/论文/' },
+      { text: '知识图谱', link: '/知识/' },
+      { text: '论文专题', link: '/论文/' },
       { text: '案例速记', link: '/案例/' },
       { text: '选择题库', link: '/选择/' },
       { text: '复习计划', link: '/plan/30天冲刺内容' },
     ],
-    sidebar: [
-      { text: '首页', link: '/' },
-      { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
-      { text: '论文目录', collapsed: false, items: paperSidebar },
-      { text: '案例速记', collapsed: false, items: caseSidebar },
-      { text: '选择题库', collapsed: false, items: choiceSidebar },
-      { text: '复习计划', collapsed: false, items: planSidebar },
-    ],
+    sidebar: {
+      '/知识/': knowledgeSidebar,
+      '/论文/': paperSidebar,
+      '/案例/': caseSidebar,
+      '/选择/': choiceSidebar,
+      '/plan/': planSidebar,
+      '/': [
+        { text: '首页', link: '/' },
+        { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
+        { text: '知识图谱', collapsed: false, items: knowledgeSidebar },
+        { text: '论文专题', collapsed: false, items: paperSidebar },
+        { text: '案例速记', collapsed: false, items: caseSidebar },
+        { text: '选择题库', collapsed: false, items: choiceSidebar },
+        { text: '复习计划', collapsed: false, items: planSidebar },
+      ]
+    },
     outline: [2, 4],
     socialLinks: [],
     footer: {
