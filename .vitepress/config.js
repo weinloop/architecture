@@ -96,6 +96,13 @@ const caseSidebar = [
   { text: '13 ElasticSearch', link: '/案例/13-ElasticSearch-考点速记' },
   { text: '14 MongoDB', link: '/案例/14-MongoDB-考点速记' },
   { text: '15 大模型应用', link: '/案例/15-大模型应用-考点速记' },
+  {
+    text: '每日一练',
+    collapsed: false,
+    items: [
+      { text: '需求工程背诵版', link: '/案例/每日一练/需求工程背诵版' },
+    ]
+  },
 ]
 
 // 论文 · 系统架构与软件工程（最新航空基线版）
