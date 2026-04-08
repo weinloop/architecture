@@ -1,8 +1,26 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
+// 整体知识 · 系分十二模块（航空案例文件名含弯引号，link 须与文件系统一致）
+const holisticKnowledgeSidebar = [
+  { text: '整体知识总览', link: '/整体知识/' },
+  { text: '1. 整体概述', link: '/整体知识/1. 整体概述' },
+  { text: '2. 系统规划与分析：项目的“源头设计”', link: '/整体知识/2. 系统规划与分析：项目的“源头设计”' },
+  { text: '3. 项目管理：贯穿项目全生命周期的“保障线”', link: '/整体知识/3. 项目管理：贯穿项目全生命周期的“保障线”' },
+  { text: '4. 软件工程：项目实施的“技术框架”', link: '/整体知识/4. 软件工程：项目实施的“技术框架”' },
+  { text: '5. 软件需求工程：全生命周期管理', link: '/整体知识/5. 软件需求工程：全生命周期管理' },
+  { text: '6. 系统设计：从需求到“技术方案”的转化', link: '/整体知识/6. 系统设计：从需求到“技术方案”的转化' },
+  { text: '7. 软件架构设计：满足质量属性的“顶层设计”', link: '/整体知识/7. 软件架构设计：满足质量属性的“顶层设计”' },
+  { text: '8.信息安全：贯穿平台全生命周期的“防护盾”', link: '/整体知识/8.信息安全：贯穿平台全生命周期的“防护盾”' },
+  { text: '9. 软件实现与测试：从‘代码’到‘可用系统’的落地', link: '/整体知识/9. 软件实现与测试：从‘代码’到‘可用系统’的落地' },
+  { text: '10. 系统运行与维护：保障平台长期稳定', link: '/整体知识/10. 系统运行与维护：保障平台长期稳定' },
+  { text: '11. 基础技术：数据库', link: '/整体知识/11. 基础技术：数据库' },
+  { text: '12. 基础技术：计算机基础', link: '/整体知识/12. 基础技术：计算机基础' },
+]
+
 // 知识 · 体系图谱（5 大阶段）
 const knowledgeSidebar = [
+  { text: '整体知识（12 章闭环）', link: '/整体知识/' },
   { text: '知识图谱总览', link: '/知识/' },
   {
     text: '01 底层基石',
@@ -80,6 +98,7 @@ const knowledgeSidebar = [
 
 // 案例 · 考点速记（15 篇）
 const caseSidebar = [
+  { text: '整体知识（12 章）', link: '/整体知识/' },
   { text: '案例总览', link: '/案例/' },
   { text: '01 需求分析', link: '/案例/01-需求分析-考点速记' },
   { text: '02 系统设计-面向对象设计', link: '/案例/02-系统设计-面向对象设计-考点速记' },
@@ -107,6 +126,7 @@ const caseSidebar = [
 
 // 论文 · 系统架构与软件工程（最新航空基线版）
 const paperSidebar = [
+  { text: '整体知识（12 章）', link: '/整体知识/' },
   { text: '论文目录', link: '/论文/' },
   {
     text: '云原生架构专题',
@@ -164,6 +184,7 @@ const paperSidebar = [
 
 // 选择 · 考点速记（14 篇）
 const choiceSidebar = [
+  { text: '整体知识（12 章）', link: '/整体知识/' },
   { text: '选择总览', link: '/选择/' },
   { text: '01 软件工程概述', link: '/选择/01-软件工程概述-考点速记' },
   { text: '02 需求工程', link: '/选择/02-需求工程-考点速记' },
@@ -183,6 +204,7 @@ const choiceSidebar = [
 
 // 计划
 const planSidebar = [
+  { text: '整体知识（12 章）', link: '/整体知识/' },
   { text: '30天冲刺内容', link: '/plan/30天冲刺内容' },
   { text: '每日计划-带关联', link: '/plan/每日计划-带关联' },
   { text: '英语 · 技术英语入门-计算机常用词汇', link: '/plan/英语/技术英语入门-计算机常用词汇' },
@@ -298,6 +320,7 @@ const proSidebar = [
 
 const sidebar = [
   { text: '首页', link: '/' },
+  { text: '整体知识', link: '/整体知识/' },
   { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
   { text: '论文专题', collapsed: false, items: paperSidebar },
   { text: '案例速记', collapsed: false, items: caseSidebar },
@@ -327,6 +350,7 @@ export default withMermaid(defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
+      { text: '整体知识', link: '/整体知识/' },
       { text: '知识图谱', link: '/知识/' },
       { text: '论文专题', link: '/论文/' },
       { text: '案例速记', link: '/案例/' },
@@ -334,6 +358,7 @@ export default withMermaid(defineConfig({
       { text: '复习计划', link: '/plan/30天冲刺内容' },
     ],
     sidebar: {
+      '/整体知识/': holisticKnowledgeSidebar,
       '/知识/': knowledgeSidebar,
       '/论文/': paperSidebar,
       '/案例/': caseSidebar,
@@ -341,6 +366,7 @@ export default withMermaid(defineConfig({
       '/plan/': planSidebar,
       '/': [
         { text: '首页', link: '/' },
+        { text: '整体知识', collapsed: false, items: holisticKnowledgeSidebar },
         { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
         { text: '知识图谱', collapsed: false, items: knowledgeSidebar },
         { text: '论文专题', collapsed: false, items: paperSidebar },
