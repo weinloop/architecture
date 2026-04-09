@@ -4,6 +4,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 // 整体知识 · 系分十二模块（航空案例文件名含弯引号，link 须与文件系统一致）
 const holisticKnowledgeSidebar = [
   { text: '整体知识总览', link: '/整体知识/' },
+  { text: '00. 大型航空运营智能管理平台架构设计', link: '/整体知识/00-大型航空运营智能管理平台架构设计' },
   { text: '1. 整体概述', link: '/整体知识/1. 整体概述' },
   { text: '2. 系统规划与分析：项目的“源头设计”', link: '/整体知识/2. 系统规划与分析：项目的“源头设计”' },
   { text: '3. 项目管理：贯穿项目全生命周期的“保障线”', link: '/整体知识/3. 项目管理：贯穿项目全生命周期的“保障线”' },
@@ -20,6 +21,7 @@ const holisticKnowledgeSidebar = [
 
 // 知识 · 体系图谱（5 大阶段）
 const knowledgeSidebar = [
+  { text: '核心架构：大型航空运营智能管理平台', link: '/整体知识/00-大型航空运营智能管理平台架构设计' },
   { text: '整体知识（12 章闭环）', link: '/整体知识/' },
   { text: '知识图谱总览', link: '/知识/' },
   {
@@ -98,6 +100,7 @@ const knowledgeSidebar = [
 
 // 案例 · 考点速记（15 篇）
 const caseSidebar = [
+  { text: '核心架构：大型航空运营智能管理平台', link: '/整体知识/00-大型航空运营智能管理平台架构设计' },
   { text: '整体知识（12 章）', link: '/整体知识/' },
   { text: '案例总览', link: '/案例/' },
   { text: '01 需求分析', link: '/案例/01-需求分析-考点速记' },
@@ -126,6 +129,7 @@ const caseSidebar = [
 
 // 论文 · 系统架构与软件工程（最新航空基线版）
 const paperSidebar = [
+  { text: '核心架构：大型航空运营智能管理平台', link: '/整体知识/00-大型航空运营智能管理平台架构设计' },
   { text: '整体知识（12 章）', link: '/整体知识/' },
   { text: '论文目录', link: '/论文/' },
   {
