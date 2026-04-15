@@ -297,6 +297,28 @@ const zhentiZongheSidebar = [
   { text: '项目管理', link: '/真题分析/综合知识点/项目管理_真题考点与教材对照_2026备考' },
 ]
 
+// 论文预测 · 四个入口：总览 / 预测题 / 结构化论述 / 通用模板（七篇成稿挂在总览侧栏）
+const lunwenYuceHubSidebar = [
+  { text: '首页', link: '/' },
+  { text: '论文预测·总览', link: '/论文预测/' },
+  { text: '预测题', link: '/论文预测/预测题' },
+  { text: '论题案例结构化论述', link: '/论文预测/预测题_论题案例结构化论述' },
+  { text: '论文成稿·通用模板', link: '/论文预测/论文成稿-通用模板' },
+  {
+    text: '七篇成稿',
+    collapsed: false,
+    items: [
+      { text: '论题01 大模型及 AI Coding', link: '/论文预测/论题01_大模型及AI_Coding技术应用_论文成稿' },
+      { text: '论题02 自动化测试', link: '/论文预测/论题02_自动化测试应用_论文成稿' },
+      { text: '论题03 服务网格', link: '/论文预测/论题03_服务网格应用_论文成稿' },
+      { text: '论题04 云原生可靠性', link: '/论文预测/论题04_云原生可靠性设计_论文成稿' },
+      { text: '论题05 Kappa 架构', link: '/论文预测/论题05_大数据Kappa架构设计应用_论文成稿' },
+      { text: '论题06 智能运维 AIOps', link: '/论文预测/论题06_智能运维AIOps应用_论文成稿' },
+      { text: '论题07 分布式缓存', link: '/论文预测/论题07_分布式缓存技术应用实践_论文成稿' },
+    ],
+  },
+]
+
 const zhentiLunwenSidebar = [
   { text: '真题总览', link: '/真题分析/' },
   { text: '论文真题总览', link: '/真题分析/论文/' },
@@ -465,6 +487,10 @@ export default withMermaid(defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
+      { text: '预测·总览', link: '/论文预测/' },
+      { text: '预测·题目', link: '/论文预测/预测题' },
+      { text: '预测·论述', link: '/论文预测/预测题_论题案例结构化论述' },
+      { text: '预测·模板', link: '/论文预测/论文成稿-通用模板' },
       { text: '考纲总览', link: '/考纲/' },
       { text: '考纲·案例', link: '/考纲/案例/' },
       { text: '考纲·综合', link: '/考纲/综合/' },
@@ -478,6 +504,7 @@ export default withMermaid(defineConfig({
       { text: '复习计划', link: '/plan/30天冲刺内容' },
     ],
     sidebar: {
+      '/论文预测/': lunwenYuceHubSidebar,
       '/真题分析/案例知识点/': zhentiCaseSidebar,
       '/真题分析/综合知识点/': zhentiZongheSidebar,
       '/真题分析/论文/': zhentiLunwenSidebar,
@@ -494,6 +521,7 @@ export default withMermaid(defineConfig({
       '/plan/': planSidebar,
       '/': [
         { text: '首页', link: '/' },
+        { text: '论文预测（四入口）', collapsed: false, items: lunwenYuceHubSidebar },
         { text: '真题分析', collapsed: false, items: zhentiHubSidebar },
         { text: '考纲知识点', collapsed: false, items: kaogangHubSidebar },
         { text: '整体知识', collapsed: false, items: holisticKnowledgeSidebar },
