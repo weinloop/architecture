@@ -259,9 +259,51 @@ const kaogangLunwenSidebar = [
 const zhentiHubSidebar = [
   { text: '首页', link: '/' },
   { text: '真题总览', link: '/真题分析/' },
+  { text: '豆包总览', link: '/真题分析/豆包/' },
   { text: '案例真题', link: '/真题分析/案例知识点/' },
   { text: '综合真题', link: '/真题分析/综合知识点/' },
   { text: '论文真题', link: '/真题分析/论文/' },
+]
+
+// 真题分析 · 豆包（综合 / 案例分类笔记）
+const zhentiDoubaoSidebar = [
+  { text: '豆包总览', link: '/真题分析/豆包/' },
+  {
+    text: '综合科目',
+    collapsed: false,
+    items: [
+      { text: '专业英语', link: '/真题分析/豆包/综合/专业英语' },
+      { text: '企业信息化战略', link: '/真题分析/豆包/综合/企业信息化战略' },
+      { text: '信息安全', link: '/真题分析/豆包/综合/信息安全' },
+      { text: '操作系统', link: '/真题分析/豆包/综合/操作系统' },
+      { text: '数学与经济管理', link: '/真题分析/豆包/综合/数学与经济管理' },
+      { text: '数据库系统', link: '/真题分析/豆包/综合/数据库系统' },
+      { text: '法律法规与标准化', link: '/真题分析/豆包/综合/法律法规与标准化' },
+      { text: '系统分析与设计', link: '/真题分析/豆包/综合/系统分析与设计' },
+      { text: '系统可靠性', link: '/真题分析/豆包/综合/系统可靠性' },
+      { text: '系统架构设计', link: '/真题分析/豆包/综合/系统架构设计' },
+      { text: '系统运行与维护', link: '/真题分析/豆包/综合/系统运行与维护' },
+      { text: '计算机组成原理', link: '/真题分析/豆包/综合/计算机组成原理' },
+      { text: '计算机网络', link: '/真题分析/豆包/综合/计算机网络' },
+      { text: '软件工程', link: '/真题分析/豆包/综合/软件工程' },
+      { text: '软件测试', link: '/真题分析/豆包/综合/软件测试' },
+      { text: '需求工程', link: '/真题分析/豆包/综合/需求工程' },
+      { text: '项目管理', link: '/真题分析/豆包/综合/项目管理' },
+      { text: '架构设计', link: '/真题分析/豆包/综合/架构设计' },
+    ],
+  },
+  {
+    text: '案例科目',
+    collapsed: false,
+    items: [
+      { text: 'Web应用设计', link: '/真题分析/豆包/案例/Web应用设计' },
+      { text: '数据库系统与缓存设计', link: '/真题分析/豆包/案例/数据库系统与缓存设计' },
+      { text: '系统安全', link: '/真题分析/豆包/案例/系统安全' },
+      { text: '系统架构设计与评估', link: '/真题分析/豆包/案例/系统架构设计与评估' },
+      { text: '系统设计与建模', link: '/真题分析/豆包/案例/系统设计与建模' },
+    ],
+  },
+  { text: '返回 · 真题总览', link: '/真题分析/' },
 ]
 
 const zhentiCaseSidebar = [
@@ -496,6 +538,7 @@ export default withMermaid(defineConfig({
       { text: '考纲·综合', link: '/考纲/综合/' },
       { text: '考纲·论文', link: '/考纲/论文/' },
       { text: '真题分析', link: '/真题分析/' },
+      { text: '真题·豆包', link: '/真题分析/豆包/' },
       { text: '整体知识', link: '/整体知识/' },
       { text: '知识图谱', link: '/知识/' },
       { text: '论文专题', link: '/论文/' },
@@ -508,6 +551,7 @@ export default withMermaid(defineConfig({
       '/真题分析/案例知识点/': zhentiCaseSidebar,
       '/真题分析/综合知识点/': zhentiZongheSidebar,
       '/真题分析/论文/': zhentiLunwenSidebar,
+      '/真题分析/豆包/': zhentiDoubaoSidebar,
       '/真题分析/': zhentiHubSidebar,
       '/考纲/案例/': kaogangCaseSidebar,
       '/考纲/综合/': kaogangZongheSidebar,
