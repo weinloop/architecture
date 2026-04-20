@@ -391,6 +391,38 @@ const planSidebar = [
   { text: '英语 · 跟读-技术介绍-云原生可观测性', link: '/plan/英语/跟读-技术介绍-云原生可观测性' },
 ]
 
+// 数据资产智能 · 四个入口：总览 / 需求 / 招标 / 模板
+const dataAssetSidebar = [
+  { text: '首页', link: '/' },
+  { text: '数据资产智能·总览', link: '/数据资产智能/' },
+  { text: '需求文档', link: '/数据资产智能/数据资产智能管理平台建设项目-PRD需求文档' },
+  { text: '招标书', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
+  { text: '论文模板', link: '/数据资产智能/模板' },
+  {
+    text: '核心论文（七篇）',
+    collapsed: false,
+    items: [
+      { text: '1. 大模型及 AI Coding', link: '/数据资产智能/论文/1.大模型及AICoding' },
+      { text: '2. 可靠性设计', link: '/数据资产智能/论文/2.可靠性设计' },
+      { text: '3. 缓存技术应用', link: '/数据资产智能/论文/3.缓存技术应用' },
+      { text: '4. 智能运维', link: '/数据资产智能/论文/4.智能运维' },
+      { text: '5. 大数据 Kappa', link: '/数据资产智能/论文/5.大数据Kappa' },
+      { text: '6. 服务网格', link: '/数据资产智能/论文/6.服务网格' },
+      { text: '7. 自动化测试', link: '/数据资产智能/论文/7.自动化测试' },
+    ],
+  },
+  {
+    text: '其他文档',
+    collapsed: false,
+    items: [
+      { text: 'TOGAF架构', link: '/数据资产智能/TOGAF架构' },
+      { text: 'TOGAF架构方法', link: '/数据资产智能/TOGAF架构方法' },
+      { text: '补充智能部分', link: '/数据资产智能/补充智能部分' },
+      { text: '招标书简版', link: '/数据资产智能/招标书' },
+    ]
+  }
+]
+
 // 论文背诵版 · 云原生（18 篇）
 const cloudNativeSidebar = [
   { text: '云原生总览', link: '/论文背诵版/云原生/' },
@@ -545,8 +577,13 @@ export default withMermaid(defineConfig({
       { text: '案例速记', link: '/案例/' },
       { text: '选择题库', link: '/选择/' },
       { text: '复习计划', link: '/plan/30天冲刺内容' },
+      { text: '资产·总览', link: '/数据资产智能/' },
+      { text: '资产·需求', link: '/数据资产智能/数据资产智能管理平台建设项目-PRD需求文档' },
+      { text: '资产·招标', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
+      { text: '资产·模板', link: '/数据资产智能/模板' },
     ],
     sidebar: {
+      '/数据资产智能/': dataAssetSidebar,
       '/论文预测/': lunwenYuceHubSidebar,
       '/真题分析/案例知识点/': zhentiCaseSidebar,
       '/真题分析/综合知识点/': zhentiZongheSidebar,
@@ -565,6 +602,7 @@ export default withMermaid(defineConfig({
       '/plan/': planSidebar,
       '/': [
         { text: '首页', link: '/' },
+        { text: '数据资产智能（四入口）', collapsed: false, items: dataAssetSidebar },
         { text: '论文预测（四入口）', collapsed: false, items: lunwenYuceHubSidebar },
         { text: '真题分析', collapsed: false, items: zhentiHubSidebar },
         { text: '考纲知识点', collapsed: false, items: kaogangHubSidebar },
