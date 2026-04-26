@@ -3,10 +3,10 @@ dist
 .vitepress/cache
 案例/_docx_extract
 案例/*.docx
-选择/media
-选择/*.docx
-选择/*-raw.md
-选择/extract_docx.py
+选择-含真题/media
+选择-含真题/*.docx
+选择-含真题/*-raw.md
+选择-含真题/extract_docx.py
 论文背诵版/*.docx
 论文背诵版/*.txt
 论文背诵版/*/*.png
