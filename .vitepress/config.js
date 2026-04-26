@@ -7,6 +7,24 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const choiceWithExamDir = path.resolve(__dirname, '../选择-含真题')
 
+/** 选择·含真题：十四章目录名（与磁盘文件夹一致，顺序即侧栏顺序） */
+const CHOICE_WITH_EXAM_CHAPTERS = [
+  '01-软件工程概述',
+  '02-需求工程',
+  '03-系统设计',
+  '04-系统架构设计',
+  '05-软件测试',
+  '06-系统运行与维护',
+  '07-系统可靠性',
+  '08-项目管理',
+  '09-计算机组成原理',
+  '10-计算机网络',
+  '11-操作系统',
+  '12-数据库系统',
+  '13-信息安全',
+  '14-法律法规',
+]
+
 /** @param {string} relPathNoMd 相对 选择-含真题，无 .md 后缀，用 / 分隔 */
 function choiceWithExamLink(relPathNoMd) {
   return `/选择-含真题/${relPathNoMd.replace(/\\/g, '/')}`
@@ -23,13 +41,9 @@ function buildChoiceWithExamSidebar() {
   ]
   if (!fs.existsSync(choiceWithExamDir)) return out
 
-  const top = fs.readdirSync(choiceWithExamDir, { withFileTypes: true })
-  const chapterDirs = top
-    .filter((e) => e.isDirectory() && /^\d{2}-/.test(e.name))
-    .map((e) => e.name)
-    .sort((a, b) => a.localeCompare(b, 'zh-Hans-CN', { numeric: true }))
-
-  for (const dir of chapterDirs) {
+  for (const dir of CHOICE_WITH_EXAM_CHAPTERS) {
+    const subAbs = path.join(choiceWithExamDir, dir)
+    if (!fs.existsSync(subAbs) || !fs.statSync(subAbs).isDirectory()) continue
     const items = []
     const cheatFile = `${dir}-考点速记.md`
     if (fs.existsSync(path.join(choiceWithExamDir, cheatFile))) {
@@ -38,7 +52,6 @@ function buildChoiceWithExamSidebar() {
         link: choiceWithExamLink(cheatFile.replace(/\.md$/, '')),
       })
     }
-    const subAbs = path.join(choiceWithExamDir, dir)
     const subMd = fs
       .readdirSync(subAbs, { withFileTypes: true })
       .filter(
