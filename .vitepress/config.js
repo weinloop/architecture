@@ -1,5 +1,74 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const choiceWithExamDir = path.resolve(__dirname, '../选择-含真题')
+
+/** @param {string} relPathNoMd 相对 选择-含真题，无 .md 后缀，用 / 分隔 */
+function choiceWithExamLink(relPathNoMd) {
+  return `/选择-含真题/${relPathNoMd.replace(/\\/g, '/')}`
+}
+
+/** 动态生成「选择·含真题」侧栏：每章 考点速记 → 总目录 → 其余卡片按文件名排序 */
+function buildChoiceWithExamSidebar() {
+  const out = [
+    { text: '整体知识（12 章）', link: '/整体知识/' },
+    { text: '选择·含真题总览', link: '/选择-含真题/' },
+  ]
+  if (!fs.existsSync(choiceWithExamDir)) return out
+
+  const top = fs.readdirSync(choiceWithExamDir, { withFileTypes: true })
+  const chapterDirs = top
+    .filter((e) => e.isDirectory() && /^\d{2}-/.test(e.name))
+    .map((e) => e.name)
+    .sort((a, b) => a.localeCompare(b, 'zh-Hans-CN', { numeric: true }))
+
+  for (const dir of chapterDirs) {
+    const items = []
+    const cheatFile = `${dir}-考点速记.md`
+    if (fs.existsSync(path.join(choiceWithExamDir, cheatFile))) {
+      items.push({
+        text: '考点速记',
+        link: choiceWithExamLink(cheatFile.replace(/\.md$/, '')),
+      })
+    }
+    const subAbs = path.join(choiceWithExamDir, dir)
+    const subMd = fs
+      .readdirSync(subAbs, { withFileTypes: true })
+      .filter(
+        (e) =>
+          e.isFile() &&
+          e.name.endsWith('.md') &&
+          !e.name.endsWith('-raw.md'),
+      )
+      .map((e) => e.name)
+      .sort((a, b) => a.localeCompare(b, 'zh-Hans-CN', { numeric: true }))
+
+    const zong = subMd.indexOf('总目录.md')
+    const ordered =
+      zong === -1
+        ? subMd
+        : ['总目录.md', ...subMd.filter((n) => n !== '总目录.md')]
+
+    for (const name of ordered) {
+      const stem = name.replace(/\.md$/, '')
+      items.push({
+        text: stem,
+        link: choiceWithExamLink(`${dir}/${stem}`),
+      })
+    }
+
+    const m = dir.match(/^(\d{2})-(.+)$/)
+    const title = m ? `${m[1]} ${m[2]}` : dir
+    out.push({ text: title, collapsed: true, items })
+  }
+  return out
+}
+
+const choiceWithExamSidebar = buildChoiceWithExamSidebar()
 
 // 整体知识 · 系分十二模块（航空案例文件名含弯引号，link 须与文件系统一致）
 const holisticKnowledgeSidebar = [
@@ -536,7 +605,7 @@ const sidebar = [
   { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
   { text: '论文专题', collapsed: false, items: paperSidebar },
   { text: '案例速记', collapsed: false, items: caseSidebar },
-  { text: '选择题库', collapsed: false, items: choiceSidebar },
+  { text: '选择题库', collapsed: false, items: choiceWithExamSidebar },
   { text: '复习计划', collapsed: false, items: planSidebar },
 ]
 
@@ -576,7 +645,7 @@ export default withMermaid(defineConfig({
       { text: '知识图谱', link: '/知识/' },
       { text: '论文专题', link: '/论文/' },
       { text: '案例速记', link: '/案例/' },
-      { text: '选择题库', link: '/选择/' },
+      { text: '选择题库', link: '/选择-含真题/' },
       { text: '复习计划', link: '/plan/30天冲刺内容' },
       { text: '资产·总览', link: '/数据资产智能/' },
       { text: '资产·需求', link: '/数据资产智能/数据资产智能管理平台建设项目-PRD需求文档' },
@@ -600,6 +669,7 @@ export default withMermaid(defineConfig({
       '/论文/': paperSidebar,
       '/案例/': caseSidebar,
       '/选择/': choiceSidebar,
+      '/选择-含真题/': choiceWithExamSidebar,
       '/plan/': planSidebar,
       '/': [
         { text: '首页', link: '/' },
@@ -612,7 +682,7 @@ export default withMermaid(defineConfig({
         { text: '知识图谱', collapsed: false, items: knowledgeSidebar },
         { text: '论文专题', collapsed: false, items: paperSidebar },
         { text: '案例速记', collapsed: false, items: caseSidebar },
-        { text: '选择题库', collapsed: false, items: choiceSidebar },
+        { text: '选择题库', collapsed: false, items: choiceWithExamSidebar },
         { text: '复习计划', collapsed: false, items: planSidebar },
       ]
     },
