@@ -17,6 +17,9 @@ function buildChoiceWithExamSidebar() {
   const out = [
     { text: '整体知识（12 章）', link: '/整体知识/' },
     { text: '选择·含真题总览', link: '/选择-含真题/' },
+    { text: '选择·01–08 工程主线', link: choiceWithExamLink('01-软件工程概述-考点速记') },
+    { text: '选择·09–12 计算机基础', link: choiceWithExamLink('09-计算机组成原理-考点速记') },
+    { text: '选择·13–14 安全与法规', link: choiceWithExamLink('13-信息安全-考点速记') },
   ]
   if (!fs.existsSync(choiceWithExamDir)) return out
 
@@ -69,6 +72,15 @@ function buildChoiceWithExamSidebar() {
 }
 
 const choiceWithExamSidebar = buildChoiceWithExamSidebar()
+
+// 选择 · 含真题（四入口：顶栏与首页侧栏与 /考纲、/论文预测 同构；含首页共 5 条）
+const choiceWithExamHubSidebar = [
+  { text: '首页', link: '/' },
+  { text: '选择·总览（含真题）', link: '/选择-含真题/' },
+  { text: '选择·01–08 工程主线', link: '/选择-含真题/01-软件工程概述-考点速记' },
+  { text: '选择·09–12 计算机基础', link: '/选择-含真题/09-计算机组成原理-考点速记' },
+  { text: '选择·13–14 安全与法规', link: '/选择-含真题/13-信息安全-考点速记' },
+]
 
 // 整体知识 · 系分十二模块（航空案例文件名含弯引号，link 须与文件系统一致）
 const holisticKnowledgeSidebar = [
@@ -605,7 +617,7 @@ const sidebar = [
   { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
   { text: '论文专题', collapsed: false, items: paperSidebar },
   { text: '案例速记', collapsed: false, items: caseSidebar },
-  { text: '选择题库', collapsed: false, items: choiceWithExamSidebar },
+  { text: '选择题库（四入口）', collapsed: false, items: choiceWithExamHubSidebar },
   { text: '复习计划', collapsed: false, items: planSidebar },
 ]
 
@@ -645,7 +657,10 @@ export default withMermaid(defineConfig({
       { text: '知识图谱', link: '/知识/' },
       { text: '论文专题', link: '/论文/' },
       { text: '案例速记', link: '/案例/' },
-      { text: '选择题库', link: '/选择-含真题/' },
+      { text: '选择·总览', link: '/选择-含真题/' },
+      { text: '选择·01–08', link: '/选择-含真题/01-软件工程概述-考点速记' },
+      { text: '选择·09–12', link: '/选择-含真题/09-计算机组成原理-考点速记' },
+      { text: '选择·13–14', link: '/选择-含真题/13-信息安全-考点速记' },
       { text: '复习计划', link: '/plan/30天冲刺内容' },
       { text: '资产·总览', link: '/数据资产智能/' },
       { text: '资产·需求', link: '/数据资产智能/数据资产智能管理平台建设项目-PRD需求文档' },
@@ -682,7 +697,7 @@ export default withMermaid(defineConfig({
         { text: '知识图谱', collapsed: false, items: knowledgeSidebar },
         { text: '论文专题', collapsed: false, items: paperSidebar },
         { text: '案例速记', collapsed: false, items: caseSidebar },
-        { text: '选择题库', collapsed: false, items: choiceWithExamSidebar },
+        { text: '选择题库（四入口）', collapsed: false, items: choiceWithExamHubSidebar },
         { text: '复习计划', collapsed: false, items: planSidebar },
       ]
     },
