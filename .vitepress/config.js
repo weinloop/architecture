@@ -455,14 +455,31 @@ const lunwenYuceHubSidebar = [
   },
 ]
 
-// 综合知识 · 四入口：总览 + 全文四锚点（与顶栏「综合知识」下拉一致）
+// 综合知识 · 侧栏：总览 + 全科核心整理（含三科锚点）+ 短文总结（四块）
 const zongheZhishiHubSidebar = [
   { text: '首页', link: '/' },
   { text: '综合知识·总览', link: '/综合知识/' },
-  { text: '工程·架构·UML', link: '/综合知识/综合知识总结#zonghe-gongcheng' },
-  { text: '数据库与 Redis', link: '/综合知识/综合知识总结#zonghe-shuju' },
-  { text: '分布式·网络·安全', link: '/综合知识/综合知识总结#zonghe-fenbushi' },
-  { text: 'AI·项目与测试', link: '/综合知识/综合知识总结#zonghe-ai' },
+  {
+    text: '考试核心知识点整理（全科）',
+    collapsed: false,
+    items: [
+      { text: '全文', link: '/综合知识/系统架构设计师考试核心知识点整理' },
+      { text: '科目1 综合知识', link: '/综合知识/系统架构设计师考试核心知识点整理#ks-kemu1' },
+      { text: '科目2 案例分析', link: '/综合知识/系统架构设计师考试核心知识点整理#ks-kemu2' },
+      { text: '科目3 论文', link: '/综合知识/系统架构设计师考试核心知识点整理#ks-kemu3' },
+    ],
+  },
+  {
+    text: '综合知识总结（短文·四块）',
+    collapsed: true,
+    items: [
+      { text: '全文', link: '/综合知识/综合知识总结' },
+      { text: '工程·架构·UML', link: '/综合知识/综合知识总结#zonghe-gongcheng' },
+      { text: '数据库与 Redis', link: '/综合知识/综合知识总结#zonghe-shuju' },
+      { text: '分布式·网络·安全', link: '/综合知识/综合知识总结#zonghe-fenbushi' },
+      { text: 'AI·项目与测试', link: '/综合知识/综合知识总结#zonghe-ai' },
+    ],
+  },
 ]
 
 const zhentiLunwenSidebar = [
@@ -705,10 +722,14 @@ export default withMermaid(defineConfig({
         text: '综合知识',
         items: [
           { text: '综合知识·总览', link: '/综合知识/' },
-          { text: '工程·架构·UML', link: '/综合知识/综合知识总结#zonghe-gongcheng' },
-          { text: '数据库与 Redis', link: '/综合知识/综合知识总结#zonghe-shuju' },
-          { text: '分布式·网络·安全', link: '/综合知识/综合知识总结#zonghe-fenbushi' },
-          { text: 'AI·项目与测试', link: '/综合知识/综合知识总结#zonghe-ai' },
+          { text: '核心整理·全科', link: '/综合知识/系统架构设计师考试核心知识点整理' },
+          { text: '核心整理·科目1', link: '/综合知识/系统架构设计师考试核心知识点整理#ks-kemu1' },
+          { text: '核心整理·科目2', link: '/综合知识/系统架构设计师考试核心知识点整理#ks-kemu2' },
+          { text: '核心整理·科目3', link: '/综合知识/系统架构设计师考试核心知识点整理#ks-kemu3' },
+          { text: '总结·工程·架构·UML', link: '/综合知识/综合知识总结#zonghe-gongcheng' },
+          { text: '总结·数据库与 Redis', link: '/综合知识/综合知识总结#zonghe-shuju' },
+          { text: '总结·分布式·网络·安全', link: '/综合知识/综合知识总结#zonghe-fenbushi' },
+          { text: '总结·AI·项目与测试', link: '/综合知识/综合知识总结#zonghe-ai' },
         ],
       },
       {
