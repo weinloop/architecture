@@ -455,6 +455,16 @@ const lunwenYuceHubSidebar = [
   },
 ]
 
+// 综合知识 · 四入口：总览 + 全文四锚点（与顶栏「综合知识」下拉一致）
+const zongheZhishiHubSidebar = [
+  { text: '首页', link: '/' },
+  { text: '综合知识·总览', link: '/综合知识/' },
+  { text: '工程·架构·UML', link: '/综合知识/综合知识总结#zonghe-gongcheng' },
+  { text: '数据库与 Redis', link: '/综合知识/综合知识总结#zonghe-shuju' },
+  { text: '分布式·网络·安全', link: '/综合知识/综合知识总结#zonghe-fenbushi' },
+  { text: 'AI·项目与测试', link: '/综合知识/综合知识总结#zonghe-ai' },
+]
+
 const zhentiLunwenSidebar = [
   { text: '真题总览', link: '/真题分析/' },
   { text: '论文真题总览', link: '/真题分析/论文/' },
@@ -632,6 +642,7 @@ const proSidebar = [
 
 const sidebar = [
   { text: '首页', link: '/' },
+  { text: '综合知识（四入口）', collapsed: true, items: zongheZhishiHubSidebar },
   { text: '整体知识', link: '/整体知识/' },
   { text: '背诵要点', link: '/论文/论文模板背诵要点表格' },
   { text: '论文专题', collapsed: false, items: paperSidebar },
@@ -662,31 +673,75 @@ export default withMermaid(defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '预测·总览', link: '/论文预测/' },
-      { text: '预测·题目', link: '/论文预测/预测题' },
-      { text: '预测·论述', link: '/论文预测/预测题_论题案例结构化论述' },
-      { text: '预测·模板', link: '/论文预测/论文成稿-通用模板' },
-      { text: '考纲总览', link: '/考纲/' },
-      { text: '考纲·案例', link: '/考纲/案例/' },
-      { text: '考纲·综合', link: '/考纲/综合/' },
-      { text: '考纲·论文', link: '/考纲/论文/' },
-      { text: '真题分析', link: '/真题分析/' },
-      { text: '真题·豆包', link: '/真题分析/豆包/' },
-      { text: '整体知识', link: '/整体知识/' },
-      { text: '知识图谱', link: '/知识/' },
-      { text: '论文专题', link: '/论文/' },
-      { text: '案例速记', link: '/案例/' },
-      { text: '选择·总览', link: '/选择-含真题/' },
-      { text: '选择·01–08', link: '/选择-含真题/01-软件工程概述-考点速记' },
-      { text: '选择·09–12', link: '/选择-含真题/09-计算机组成原理-考点速记' },
-      { text: '选择·13–14', link: '/选择-含真题/13-信息安全-考点速记' },
+      {
+        text: '论文预测',
+        items: [
+          { text: '预测·总览', link: '/论文预测/' },
+          { text: '预测·题目', link: '/论文预测/预测题' },
+          { text: '预测·论述', link: '/论文预测/预测题_论题案例结构化论述' },
+          { text: '预测·模板', link: '/论文预测/论文成稿-通用模板' },
+        ],
+      },
+      {
+        text: '考纲',
+        items: [
+          { text: '考纲总览', link: '/考纲/' },
+          { text: '考纲·案例', link: '/考纲/案例/' },
+          { text: '考纲·综合', link: '/考纲/综合/' },
+          { text: '考纲·论文', link: '/考纲/论文/' },
+        ],
+      },
+      {
+        text: '真题分析',
+        items: [
+          { text: '真题总览', link: '/真题分析/' },
+          { text: '真题·豆包', link: '/真题分析/豆包/' },
+          { text: '案例真题', link: '/真题分析/案例知识点/' },
+          { text: '综合真题', link: '/真题分析/综合知识点/' },
+          { text: '论文真题', link: '/真题分析/论文/' },
+        ],
+      },
+      {
+        text: '综合知识',
+        items: [
+          { text: '综合知识·总览', link: '/综合知识/' },
+          { text: '工程·架构·UML', link: '/综合知识/综合知识总结#zonghe-gongcheng' },
+          { text: '数据库与 Redis', link: '/综合知识/综合知识总结#zonghe-shuju' },
+          { text: '分布式·网络·安全', link: '/综合知识/综合知识总结#zonghe-fenbushi' },
+          { text: 'AI·项目与测试', link: '/综合知识/综合知识总结#zonghe-ai' },
+        ],
+      },
+      {
+        text: '知识素材',
+        items: [
+          { text: '整体知识', link: '/整体知识/' },
+          { text: '知识图谱', link: '/知识/' },
+          { text: '论文专题', link: '/论文/' },
+          { text: '案例速记', link: '/案例/' },
+        ],
+      },
+      {
+        text: '选择题库',
+        items: [
+          { text: '选择·总览', link: '/选择-含真题/' },
+          { text: '选择·01–08', link: '/选择-含真题/01-软件工程概述-考点速记' },
+          { text: '选择·09–12', link: '/选择-含真题/09-计算机组成原理-考点速记' },
+          { text: '选择·13–14', link: '/选择-含真题/13-信息安全-考点速记' },
+        ],
+      },
       { text: '复习计划', link: '/plan/30天冲刺内容' },
-      { text: '资产·总览', link: '/数据资产智能/' },
-      { text: '资产·需求', link: '/数据资产智能/数据资产智能管理平台建设项目-PRD需求文档' },
-      { text: '资产·招标', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
-      { text: '资产·模板', link: '/数据资产智能/模板' },
+      {
+        text: '数据资产',
+        items: [
+          { text: '资产·总览', link: '/数据资产智能/' },
+          { text: '资产·需求', link: '/数据资产智能/数据资产智能管理平台建设项目-PRD需求文档' },
+          { text: '资产·招标', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
+          { text: '资产·模板', link: '/数据资产智能/模板' },
+        ],
+      },
     ],
     sidebar: {
+      '/综合知识/': zongheZhishiHubSidebar,
       '/数据资产智能/': dataAssetSidebar,
       '/论文预测/': lunwenYuceHubSidebar,
       '/真题分析/案例知识点/': zhentiCaseSidebar,
@@ -707,6 +762,7 @@ export default withMermaid(defineConfig({
       '/plan/': planSidebar,
       '/': [
         { text: '首页', link: '/' },
+        { text: '综合知识（四入口）', collapsed: true, items: zongheZhishiHubSidebar },
         { text: '数据资产智能（四入口）', collapsed: false, items: dataAssetSidebar },
         { text: '论文预测（四入口）', collapsed: false, items: lunwenYuceHubSidebar },
         { text: '真题分析', collapsed: false, items: zhentiHubSidebar },
