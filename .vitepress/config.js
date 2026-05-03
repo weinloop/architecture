@@ -520,6 +520,7 @@ const dataAssetSidebar = [
   { text: '招标书', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
   { text: '论文模板', link: '/数据资产智能/模板' },
   { text: '论文总览', link: '/数据资产智能/论文/总览' },
+  { text: '正文归纳汇总', link: '/数据资产智能/论文/正文归纳汇总' },
   {
     text: '核心论文（十二篇）',
     collapsed: false,
@@ -755,6 +756,7 @@ export default withMermaid(defineConfig({
         text: '数据资产',
         items: [
           { text: '资产·总览', link: '/数据资产智能/' },
+          { text: '资产·正文归纳', link: '/数据资产智能/论文/正文归纳汇总' },
           { text: '资产·需求', link: '/数据资产智能/数据资产智能管理平台建设项目-PRD需求文档' },
           { text: '资产·招标', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
           { text: '资产·模板', link: '/数据资产智能/模板' },
