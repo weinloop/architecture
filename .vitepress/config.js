@@ -658,6 +658,15 @@ const proSidebar = [
   { text: '测试', collapsed: false, items: proTestSidebar },
 ]
 
+// 集合版 · 四个入口：总览 / 综合知识 / 案例 / 论文
+const collectionSidebar = [
+  { text: '首页', link: '/' },
+  { text: '集合版·总览', link: '/集合版/' },
+  { text: '综合知识集合版', link: '/集合版/1.综合知识集合版' },
+  { text: '案例集合版', link: '/集合版/2.案例集合版' },
+  { text: '论文集合版', link: '/集合版/3.论文集合版' },
+]
+
 const sidebar = [
   { text: '首页', link: '/' },
   { text: '综合知识（四入口）', collapsed: true, items: zongheZhishiHubSidebar },
@@ -751,6 +760,15 @@ export default withMermaid(defineConfig({
           { text: '选择·13–14', link: '/选择-含真题/13-信息安全-考点速记' },
         ],
       },
+      {
+        text: '集合版',
+        items: [
+          { text: '集合版·总览', link: '/集合版/' },
+          { text: '综合知识集合版', link: '/集合版/1.综合知识集合版' },
+          { text: '案例集合版', link: '/集合版/2.案例集合版' },
+          { text: '论文集合版', link: '/集合版/3.论文集合版' },
+        ],
+      },
       { text: '复习计划', link: '/plan/30天冲刺内容' },
       {
         text: '数据资产',
@@ -764,6 +782,7 @@ export default withMermaid(defineConfig({
       },
     ],
     sidebar: {
+      '/集合版/': collectionSidebar,
       '/综合知识/': zongheZhishiHubSidebar,
       '/数据资产智能/': dataAssetSidebar,
       '/论文预测/': lunwenYuceHubSidebar,
@@ -785,6 +804,7 @@ export default withMermaid(defineConfig({
       '/plan/': planSidebar,
       '/': [
         { text: '首页', link: '/' },
+        { text: '集合版（四入口）', collapsed: false, items: collectionSidebar },
         { text: '综合知识（四入口）', collapsed: true, items: zongheZhishiHubSidebar },
         { text: '数据资产智能（四入口）', collapsed: false, items: dataAssetSidebar },
         { text: '论文预测（四入口）', collapsed: false, items: lunwenYuceHubSidebar },
