@@ -664,6 +664,7 @@ const collectionSidebar = [
   { text: '集合版·总览', link: '/集合版/' },
   { text: '综合知识集合版', link: '/集合版/1.综合知识集合版' },
   { text: '案例集合版', link: '/集合版/2.案例集合版' },
+  { text: '案例重点版', link: '/集合版/4.案例重点版' },
   { text: '论文集合版', link: '/集合版/3.论文集合版' },
 ]
 
@@ -766,6 +767,7 @@ export default withMermaid(defineConfig({
           { text: '集合版·总览', link: '/集合版/' },
           { text: '综合知识集合版', link: '/集合版/1.综合知识集合版' },
           { text: '案例集合版', link: '/集合版/2.案例集合版' },
+          { text: '案例重点版', link: '/集合版/4.案例重点版' },
           { text: '论文集合版', link: '/集合版/3.论文集合版' },
         ],
       },
