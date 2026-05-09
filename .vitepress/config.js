@@ -543,6 +543,14 @@ const dataAssetSidebar = [
   { text: '论文模板', link: '/数据资产智能/模板' },
   { text: '论文总览', link: '/数据资产智能/论文/总览' },
   {
+    text: '101 备考汇总',
+    collapsed: false,
+    items: [
+      { text: '综合知识汇总（101）', link: '/数据资产智能/论文/101综合知识汇总' },
+      { text: '案例汇总（101）', link: '/数据资产智能/论文/101案例汇总' },
+    ],
+  },
+  {
     text: '架构论文拆解',
     collapsed: false,
     items: [
@@ -746,7 +754,7 @@ const base = process.env.BASE_PATH || '/'
 
 export default withMermaid(defineConfig({
   srcDir: '.',
-  srcExclude: ['**/*-raw.md', '**/_docx_extract/**', '**/extract_docx.py', '**/node_modules/**'],
+  srcExclude: ['**/*-raw.md', '**/_docx_extract/**', '**/extract_docx.py', '**/node_modules/**', '**/.venv_docx/**'],
   outDir: 'dist',
   base,
   title: '航空运营架构论文集',
@@ -844,6 +852,8 @@ export default withMermaid(defineConfig({
           { text: '资产·论点二', link: '/数据资产智能/论文/论点二集合' },
           { text: '资产·论点三', link: '/数据资产智能/论文/论点三集合' },
           { text: '资产·正文归纳', link: '/数据资产智能/论文/正文归纳汇总' },
+          { text: '资产·101 综合汇总', link: '/数据资产智能/论文/101综合知识汇总' },
+          { text: '资产·101 案例汇总', link: '/数据资产智能/论文/101案例汇总' },
           { text: '资产·需求', link: '/数据资产智能/数据资产智能管理平台建设项目-PRD需求文档' },
           { text: '资产·招标', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
           { text: '资产·模板', link: '/数据资产智能/模板' },
