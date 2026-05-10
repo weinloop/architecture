@@ -226,6 +226,7 @@ const paperSidebar = [
   { text: '核心架构：大型航空运营智能管理平台', link: '/整体知识/00-大型航空运营智能管理平台架构设计' },
   { text: '整体知识（12 章）', link: '/整体知识/' },
   { text: '论文目录', link: '/论文/' },
+  { text: '数据资产 · 技术点与三段 SCQA', link: '/数据资产智能/论文/论文技术点和三段' },
   {
     text: '架构论文横向对比',
     collapsed: false,
@@ -542,6 +543,7 @@ const dataAssetSidebar = [
   { text: '招标书', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
   { text: '论文模板', link: '/数据资产智能/模板' },
   { text: '论文总览', link: '/数据资产智能/论文/总览' },
+  { text: '技术点与三段（全书 SCQA）', link: '/数据资产智能/论文/论文技术点和三段' },
   {
     text: '101 备考汇总',
     collapsed: false,
@@ -754,7 +756,15 @@ const base = process.env.BASE_PATH || '/'
 
 export default withMermaid(defineConfig({
   srcDir: '.',
-  srcExclude: ['**/*-raw.md', '**/_docx_extract/**', '**/extract_docx.py', '**/node_modules/**', '**/.venv_docx/**'],
+  srcExclude: [
+    '**/*-raw.md',
+    '**/_docx_extract/**',
+    '**/extract_docx.py',
+    '**/node_modules/**',
+    '**/.venv_docx/**',
+    // 根级旧稿与「论文/论文技术点和三段.md」重复，避免双路由歧义
+    '数据资产智能/论文技术点和三段.md',
+  ],
   outDir: 'dist',
   base,
   title: '航空运营架构论文集',
@@ -857,6 +867,7 @@ export default withMermaid(defineConfig({
           { text: '资产·需求', link: '/数据资产智能/数据资产智能管理平台建设项目-PRD需求文档' },
           { text: '资产·招标', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
           { text: '资产·模板', link: '/数据资产智能/模板' },
+          { text: '资产·技术点与三段', link: '/数据资产智能/论文/论文技术点和三段' },
         ],
       },
     ],
