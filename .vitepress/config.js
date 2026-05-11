@@ -227,6 +227,7 @@ const paperSidebar = [
   { text: '整体知识（12 章）', link: '/整体知识/' },
   { text: '论文目录', link: '/论文/' },
   { text: '数据资产 · 技术点与三段 SCQA', link: '/数据资产智能/论文/论文技术点和三段' },
+  { text: '数据资产 · 十二篇背诵汇总', link: '/数据资产智能/论文/背诵汇总' },
   {
     text: '架构论文横向对比',
     collapsed: false,
@@ -544,6 +545,7 @@ const dataAssetSidebar = [
   { text: '论文模板', link: '/数据资产智能/模板' },
   { text: '论文总览', link: '/数据资产智能/论文/总览' },
   { text: '技术点与三段（全书 SCQA）', link: '/数据资产智能/论文/论文技术点和三段' },
+  { text: '十二篇背诵汇总', link: '/数据资产智能/论文/背诵汇总' },
   {
     text: '101 备考汇总',
     collapsed: false,
@@ -868,6 +870,7 @@ export default withMermaid(defineConfig({
           { text: '资产·招标', link: '/数据资产智能/数据资产智能管理平台建设项目（招标书完整稿）' },
           { text: '资产·模板', link: '/数据资产智能/模板' },
           { text: '资产·技术点与三段', link: '/数据资产智能/论文/论文技术点和三段' },
+          { text: '资产·十二篇背诵汇总', link: '/数据资产智能/论文/背诵汇总' },
         ],
       },
     ],
